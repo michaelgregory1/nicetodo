@@ -1,0 +1,47 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome ToDo List</title>
+    <link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <div class="bar header">
+      <h1>Your Awesome ToDo List</h1>
+    </div>
+    <div class="content">
+      <div class="task-input">
+        <h3>Add a task...</h3>
+        <input id="input" type="text" name="" value="">
+        <button type="button" name="button" class="create-button">Add</button>
+      </div>
+      <div class="tasks">
+        <div class="tasks__to-do">
+          <div class="tasks__header">
+            <h3>To Do</h3>
+            <button type="button" class='clearToDo'>Clear All</button>
+          </div>
+          <ul id="toDoList"></ul>
+        </div>
+        <div class="tasks__completed">
+          <div class="tasks__header">
+            <h3>Complete</h3>
+            <button type="button" class='clearCompleted'>Clear All</button>
+          </div>
+          <ul id="completedList"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="bar footer">
+      <h3 id="left">Coded by Michael Gregory</h3>
+      <i class="fab fa-linkedin" href="https://www.linkedin.com/in/michael-gregory1/"></i>
+      <i class="fab fa-github" href="https://github.com/michaelgregory1"></i>
+      <i class="fas fa-user" href="michaelgregory1.github.io"></i>
+    </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="todo.js" ></script>
+</html>
