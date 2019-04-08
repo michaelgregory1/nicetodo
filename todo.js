@@ -3,7 +3,6 @@ clearCompleted ()
 clearToDo ()
 
 const toDoList = document.getElementById('toDoList')
-const completedList = document.getElementById('completedList')
 
 function createTask () {
 
@@ -48,9 +47,10 @@ function createNewTask (value) {
 
   button.append(icon)
 
-  button.addEventListener('click', (e) => {
-
-     e.currentTarget.parentNode.remove()
+  $(button).click(function() {
+     $(this.parentNode).slideUp(600, function() {
+         $(this).remove()
+     })
 
   })
 
@@ -62,30 +62,33 @@ function createNewTask (value) {
 
   toDoList.append(li)
 
-  completeButton.addEventListener('click', (e) => {
-
-     completedList.append(e.currentTarget.parentNode)
-     completeButton.style.visibility = 'hidden'
-
+  $(completeButton).one("click", function() {
+    $(this).append("<i class='fas fa-check'></i>")
+    $(this).addClass('new-button')
+    $(this.parentNode).fadeOut(600, function(){
+      $('#completedList').append(this)
+      $(this).fadeIn(600);
+    })
   })
+
 }
 
 function clearToDo (){
 
   $(".clearToDo").click(function() {
 
-    $(toDoList).children().fadeOut('slow', function() {
-        $(toDoList).children().remove();
+    $(toDoList).children().fadeOut('slow',function() {
+      $(toDoList).children().remove()
     })
-  });
+  })
 }
 
 function clearCompleted (){
 
   $(".clearCompleted").click(function() {
 
-    $(completedList).children().fadeOut('slow', function() {
-        $(completedList).children().remove();
+    $('#completedList').children().fadeOut('slow',function() {
+        $('#completedList').children().remove()
     })
-  });
+  })
 }
